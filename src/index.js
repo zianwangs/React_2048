@@ -4,9 +4,7 @@ import './index.css';
 
 function numToRGB(i) {
   let step = Math.max(1, 11 - Math.floor(Math.log2(i))) * 0x111111;
-  let rgb = "#" + step.toString(16);
-  console.log(rgb);
-  return rgb;
+  return "#" + step.toString(16);
 }
 
 function Square(props) {
@@ -17,13 +15,11 @@ function Square(props) {
   );
 }
 
-
 function Board() {
 
   let [board, setBoard] = useState(Array(4).fill(null).map(() => Array(4).fill(null)));
 
   useEffect(init, []);
-
 
   function renderRow(row) {
     return (
@@ -42,9 +38,6 @@ function Board() {
     genNumber();
     genNumber();
   }
-
-
-
 
   function moveLeft() {
     for (let i = 0; i < 4; ++i) {
